@@ -301,7 +301,7 @@ with tab3:
 
     st.markdown("## Ponto de Virada")
 
-    paragrafo1_tab3 = 'O <b>Ponto de Virada</b> representa um estágio crucial no desenvolvimento do aluno, no qual ele manifesta ativamente várias dimensões de sua jornada dentro da Associação. Nesse momento, é essencial que o aluno esteja consciente da importância da educação, do valor do conhecimento e da relevância do aprendizado. Passar pelo Ponto de Virada deve significar que o aluno está pronto para iniciar a transformação de sua vida por meio da educação.'
+    paragrafo1_tab3 = 'O <b>Ponto de Virada</b> representa um estágio crucial no desenvolvimento do aluno, no qual ele manifesta ativamente várias dimensões de sua jornada dentro da Associação. Nesse momento, é essencial que o aluno esteja consciente da importância da educação ao reconhecer o valor do conhecimento adquirido e a relevância do aprendizado como processo de construção de novos conhecimentos. Passar pelo Ponto de Virada deve significar que o aluno está pronto para protagonizar a transformação de sua vida por meio da educação onde outrora era coadjuvante.'
     paragrafo2_tab3 = 'Nessa perspectiva, vamos analisar alguns fatores possivelmente envolvidos com o <b>Ponto de Virada</b>.'
 
     texto_justificado_tab3 = f"""
@@ -350,7 +350,7 @@ with tab3:
     fig.update_layout(legend_title="Ponto de Virada")     
     st.plotly_chart(fig)
 
-    paragrafo3_tab0 = 'Podemos observar que o Ponto de Virada é alcançado por apenas uma minoria dos alunos, representando uma percentagem relativamente baixa, situada na faixa de 13 a 15%, em cada um dos anos para os quais os dados foram disponibilizados. Essa constatação sugere que a maioria dos alunos não experimenta esse ponto de transformação ou mudança significativa em seu processo educacional durante esses períodos analisados. Isso levanta questões sobre os fatores subjacentes que influenciam essa pequena porcentagem de alunos e o que pode ser feito para aumentar o alcance desse ponto crítico de desenvolvimento educacional.'
+    paragrafo3_tab0 = 'Podemos observar que o Ponto de Virada é alcançado por apenas uma minoria dos alunos, representando um percentual relativamente baixo, situado na faixa dos 15% nos anos de 2020 e 2022. O ano de 2021 apresenta um percentual de cerca de 18%, mas com uma quantidade menor de alunos em momento de Ponto de Virada. Ao passo que em 2022, apesar de voltar ao percentual médio, a quantidade de alunos nesse momento aumenta significativamente, o que pode indicar resiliência em manter os resultados alcançados, considerando o período após a pandemia e o aumento conjunto no quadro de profissionais atuantes na ONG. O indicativo de que a maioria dos alunos não experimenta esse ponto de transformação ou mudança significativa em seu processo educacional durante esses períodos analisados levanta questões sobre os fatores subjacentes que influenciam essa pequena porcentagem de alunos e o que pode ser feito para aumentar o alcance desse ponto crítico de desenvolvimento educacional. Afinal, o envolvimento de outros profissionais, mais relacionados ao acompanhamento psíquico, emocional e social para além da vertente pedagógica ainda é recente e a proporção de professores e alunos se manteve crescente.'
 
     texto_justificado_2_tab3 = f"""
         <p style="text-align: justify;">{paragrafo3_tab0}</p>       
@@ -394,7 +394,7 @@ with tab3:
     plt.grid(True)    
     st.pyplot(fig)
 
-    paragrafo4_tab0 = 'Ao analisarmos a relação entre o número de profissionais na ONG e o número de alunos que alcançaram o Ponto de Virada, podemos observar um crescimento gradual, embora modesto. Inicialmente, a proporção era de 12,77%, aumentando para 14,81% e posteriormente para 18,58%. Essa tendência sugere uma possível correlação entre o aumento do suporte oferecido pelos profissionais da ONG e o crescimento do número de alunos capazes de atingir esse marco educacional crucial. '
+    paragrafo4_tab0 = 'Ao analisarmos a relação entre o número de profissionais na ONG e o número de alunos que alcançaram o Ponto de Virada, podemos observar um crescimento gradual, embora modesto. Inicialmente, a proporção era de 12,77%, aumentando para 14,81% e posteriormente para 18,58%. Essa tendência sugere uma possível correlação entre o aumento do suporte oferecido pelos profissionais da ONG e o crescimento do número de alunos capazes de atingir esse marco educacional crucial. Reforçando a resiliência em manter proporcionalmente os resultados com o aumento da quantidade de alunos e indicando que o envolvimento de profissionais voltados ao bem estar psíquico, emocional e social podem trazer resultados maiores no médio-prazo.'
     
     texto_justificado_3_tab3 = f"""
         <p style="text-align: justify;">{paragrafo4_tab0}</p>       
@@ -423,7 +423,7 @@ with tab3:
     medias['ANO'] = medias['ANO'].astype(int).astype(str)
     st.write(medias)
 
-    paragrafo6_tab0 = 'Da mesma forma que foi observado com as notas, uma tendência semelhante se manifestou nos diversos indicadores avaliados, incluindo autoavaliação, engajamento, aspectos psicossociais, aprendizado e avaliação psicopedagógica. Essa consistência sugere que há uma inter-relação complexa entre esses diferentes aspectos do desenvolvimento do aluno. Essa análise mais profunda aponta para a necessidade de uma abordagem holística na compreensão do progresso educacional, levando em consideração não apenas o desempenho acadêmico, mas também fatores socioemocionais e psicopedagógicos que impactam o processo de aprendizagem e crescimento pessoal do aluno.'
+    paragrafo6_tab0 = 'Da mesma forma que foi observado com as notas, uma tendência semelhante se manifestou nos diversos indicadores avaliados. Incluindo autoavaliação, engajamento, aspectos psicossociais, aprendizado e avaliação psicopedagógica. Essa consistência sugere que há uma inter-relação complexa entre esses diferentes aspectos do desenvolvimento do aluno. Essa análise mais profunda aponta para a necessidade de uma abordagem holística na compreensão do progresso educacional, levando em consideração não apenas o desempenho acadêmico, mas também fatores socioemocionais e psicopedagógicos que impactam o processo de aprendizagem e crescimento pessoal do aluno, possibilitando uma maior clareza de propósito na jornada da educação e aumentando o potencial do Ponto de Virada.'
 
     texto_justificado_5_tab3 = f"""
         <p style="text-align: justify;">{paragrafo6_tab0}</p>       
