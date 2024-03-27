@@ -447,13 +447,13 @@ with tab4:
 
     st.markdown(texto_justificado_1_tab4, unsafe_allow_html=True)
 
-    df_ideb_por_escola = pd.read_excel('dados\ideb_saeb_por_escola.xlsx')
+    df_ideb_por_escola = pd.read_excel('dados/ideb_saeb_por_escola.xlsx')
     df_ideb_por_escola_embu_guacu = df_ideb_por_escola[df_ideb_por_escola['nome_municipio'] == 'Embu-Guaçu']
     df_ideb_por_escola_embu_guacu = df_ideb_por_escola_embu_guacu[df_ideb_por_escola_embu_guacu['ideb'] != '-']
     df_ideb_por_escola_embu_guacu[['saeb_matematica', 'saeb_portugues', 'saeb_nota_media', 'ideb']] = df_ideb_por_escola_embu_guacu[['saeb_matematica', 'saeb_portugues', 'saeb_nota_media', 'ideb']].astype(float)
 
 
-    df_ideb_por_municipio = pd.read_excel('dados\ideb_saeb_por_municipio.xlsx')
+    df_ideb_por_municipio = pd.read_excel('dados/ideb_saeb_por_municipio.xlsx')
 
     st.markdown("### IDEB do Município de Embu-Guaçu")
 
