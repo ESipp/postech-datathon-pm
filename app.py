@@ -13,6 +13,9 @@ st.set_page_config(
     page_title="Datathon - Passos Mágicos"
 )
 
+st.title('Passos Mágicos - Analytics')
+
+
 tab0, tab1, tab2, tab3, tab4 = st.tabs(["Introdução", "Visão Geral dos Dados", "Forecast e What-if", "Ponto de Virada", "IDEB"])
 
 with tab0:      
@@ -178,27 +181,33 @@ with tab2:
     # Previsão com média móvel simples
     media_movel = np.mean(alunos_exist)
     forecast_media_movel = np.full(len(anos_exist) + 5, media_movel)
+    forecast_media_movel = np.round(forecast_media_movel).astype(int)
+    
 
     # Previsão com regressão linear simples
     modelo_regressao = LinearRegression()
     modelo_regressao.fit(anos_exist.reshape(-1, 1), alunos_exist)
     anos_futuros_regressao = np.arange(anos_exist[0], anos_exist[-1] + 6).reshape(-1, 1)
     forecast_regressao = modelo_regressao.predict(anos_futuros_regressao)
+    forecast_regressao = np.round(forecast_regressao).astype(int)
 
     # Previsão com método Naive
     last_observation = alunos_exist[-1]
     forecast_naive = np.full(len(anos_exist) + 5, last_observation)
+    forecast_naive = np.round(forecast_naive).astype(int)
 
     # Previsão com Random Forest
     modelo_random_forest = RandomForestRegressor()
     modelo_random_forest.fit(anos_exist.reshape(-1, 1), alunos_exist)
     anos_futuros_rf = np.arange(anos_exist[0], anos_exist[-1] + 6).reshape(-1, 1)
     forecast_random_forest = modelo_random_forest.predict(anos_futuros_rf)
+    forecast_random_forest = np.round(forecast_random_forest).astype(int)
 
     # Previsão com suavização exponencial simples
     modelo_suav_exp = SimpleExpSmoothing(alunos_exist)
     resultado_suav_exp = modelo_suav_exp.fit()
     forecast_suav_exp = resultado_suav_exp.forecast(len(anos_exist) + 5)
+    forecast_suav_exp = np.round(forecast_suav_exp).astype(int)
 
     # Criando o gráfico com Plotly
     fig = go.Figure()
