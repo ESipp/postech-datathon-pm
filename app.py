@@ -13,7 +13,7 @@ st.set_page_config(
     page_title="Datathon - Passos Mágicos"
 )
 
-tab0, tab1, tab2, tab3 = st.tabs(["Introdução", "Visão Geral dos Dados", "Forecast e What-if", "Ponto de Virada"])
+tab0, tab1, tab2, tab3, tab4 = st.tabs(["Introdução", "Visão Geral dos Dados", "Forecast e What-if", "Ponto de Virada", "IDEB"])
 
 with tab0:      
 
@@ -430,3 +430,455 @@ with tab3:
     """
 
     st.markdown(texto_justificado_5_tab3, unsafe_allow_html=True)
+
+
+with tab4:      
+
+    st.markdown("## IDEB")
+
+    paragrafo1_tab4 = 'O Índice de Desenvolvimento da Educação Básica (IDEB) é uma métrica utilizada no Brasil para avaliar a qualidade do ensino nas escolas públicas, levando em conta o desempenho dos alunos em avaliações padronizadas e a taxa de aprovação. Sua importância reside no fato de que oferece um panorama objetivo sobre a eficácia do sistema educacional, permitindo identificar pontos fortes e fracos e orientando políticas públicas para melhorar o ensino.'
+    paragrafo2_tab4 = 'No âmbito do projeto em questão, a análise do Índice de Desenvolvimento da Educação Básica (IDEB) nas escolas e no município de Embu-Guaçu desempenha um papel fundamental. Através dessa avaliação, torna-se possível identificar lacunas na educação pública onde a intervenção da ONG Passos Mágicos pode ser direcionada de maneira estratégica. Isso assegura que os recursos sejam alocados de forma eficaz, visando elevar a qualidade do ensino e proporcionar oportunidades igualitárias de aprendizagem para todos os alunos do município.'
+
+
+    texto_justificado_1_tab4 = f"""
+        <p style="text-align: justify;">{paragrafo1_tab4}</p>       
+        <p style="text-align: justify;">{paragrafo2_tab4}</p>       
+    """
+
+    st.markdown(texto_justificado_1_tab4, unsafe_allow_html=True)
+
+    df_ideb_por_escola = pd.read_excel('dados\ideb_saeb_por_escola.xlsx')
+    df_ideb_por_escola_embu_guacu = df_ideb_por_escola[df_ideb_por_escola['nome_municipio'] == 'Embu-Guaçu']
+    df_ideb_por_escola_embu_guacu = df_ideb_por_escola_embu_guacu[df_ideb_por_escola_embu_guacu['ideb'] != '-']
+    df_ideb_por_escola_embu_guacu[['saeb_matematica', 'saeb_portugues', 'saeb_nota_media', 'ideb']] = df_ideb_por_escola_embu_guacu[['saeb_matematica', 'saeb_portugues', 'saeb_nota_media', 'ideb']].astype(float)
+
+
+    df_ideb_por_municipio = pd.read_excel('dados\ideb_saeb_por_municipio.xlsx')
+
+    st.markdown("### IDEB do Município de Embu-Guaçu")
+
+    fig0 = go.Figure()
+
+    fig0.add_trace(go.Bar(x=df_ideb_por_municipio[(df_ideb_por_municipio['ano'] == 2017) & (df_ideb_por_municipio['rede'] == 'Pública')]['ciclo'], 
+                        y=df_ideb_por_municipio[(df_ideb_por_municipio['ano'] == 2017) & (df_ideb_por_municipio['rede'] == 'Pública')]['ideb'], 
+                        name='2017'))
+    fig0.add_trace(go.Bar(x=df_ideb_por_municipio[(df_ideb_por_municipio['ano'] == 2019) & (df_ideb_por_municipio['rede'] == 'Pública')]['ciclo'], 
+                        y=df_ideb_por_municipio[(df_ideb_por_municipio['ano'] == 2019) & (df_ideb_por_municipio['rede'] == 'Pública')]['ideb'], 
+                        name='2019'))
+    fig0.add_trace(go.Bar(x=df_ideb_por_municipio[(df_ideb_por_municipio['ano'] == 2021) & (df_ideb_por_municipio['rede'] == 'Pública')]['ciclo'], 
+                        y=df_ideb_por_municipio[(df_ideb_por_municipio['ano'] == 2021) & (df_ideb_por_municipio['rede'] == 'Pública')]['ideb'], 
+                        name='2021'))
+
+    fig0.update_layout(title='Valor do IDEB do Município de Embu-Guaçu por Ano Escolar',
+                    xaxis_title='Ano Escolar',
+                    yaxis_title='IDEB',
+                    barmode='group',                    
+                    legend_title='Ano')
+
+    st.plotly_chart(fig0)
+
+    paragrafo3_tab4 = 'Através da análise do gráfico, percebe-se um crescimento no IDEB entre os anos de 2017 e 2019, especialmente nos anos finais do ensino (do 6º ao 9º ano) e no ensino médio. Entretanto, ocorreu uma reversão nesse cenário nos anos subsequentes, com uma queda significativa nos valores do IDEB entre 2019 e 2021, particularmente nos anos iniciais do ensino (do 1º ao 5º ano). Esta diminuição acentuada pode ser atribuída, em grande parte, aos desafios enfrentados durante a pandemia de COVID-19. O impacto da interrupção das aulas presenciais, adaptações no ensino remoto e as disparidades no acesso às tecnologias educacionais podem ter contribuído para esse declínio no desempenho educacional, evidenciando a necessidade de estratégias específicas de recuperação e apoio pedagógico para mitigar esses efeitos adversos.'
+
+    texto_justificado_2_tab4 = f"""
+        <p style="text-align: justify;">{paragrafo3_tab4}</p>               
+    """
+
+    st.markdown(texto_justificado_2_tab4, unsafe_allow_html=True)
+
+    st.markdown("### IDEB por Escola do Município de Embu-Guaçu")
+
+    df_ideb_por_escola_embu_guacu = df_ideb_por_escola_embu_guacu.sort_values(by='ideb', ascending=False)
+
+    fig1 = go.Figure()
+
+    fig1.add_trace(go.Bar(x=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AI')]['nome_escola'], y=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AI')]['ideb'], name='2017'))
+    fig1.add_trace(go.Bar(x=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AI')]['nome_escola'], y=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AI')]['ideb'], name='2019'))
+    fig1.add_trace(go.Bar(x=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2021) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AI')]['nome_escola'], y=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2021) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AI')]['ideb'], name='2021'))
+
+    fig1.update_layout(title='Valor do IDEB por Escola do Município de Embu-Guaçu nos Anos Iniciais (1º ao 5º ano)',
+                    xaxis_title='Escolas',
+                    yaxis_title='IDEB',
+                    barmode='group',
+                    legend_title='Ano',
+                    width=900,  
+                    height=600,  
+                    yaxis_tickangle=-45)  
+    
+    st.plotly_chart(fig1)
+
+
+   
+    fig2 = go.Figure()
+
+    fig2.add_trace(go.Bar(x=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]['nome_escola'], y=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]['ideb'], name='2017'))
+    fig2.add_trace(go.Bar(x=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]['nome_escola'], y=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]['ideb'], name='2019'))
+    fig2.add_trace(go.Bar(x=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2021) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]['nome_escola'], y=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2021) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]['ideb'], name='2021'))
+    
+    fig2.update_layout(title='Valor do IDEB por Escola do Município de Embu-Guaçu nos Anos Finais (6º ao 9º ano)',
+                    xaxis_title='Escolas',
+                    yaxis_title='IDEB',
+                    barmode='group',
+                    legend_title='Ano',
+                    width=800,
+                    height=600, 
+                    yaxis_tickangle=-45)
+  
+    st.plotly_chart(fig2)
+
+    
+    fig3 = go.Figure()
+
+    fig3.add_trace(go.Bar(x=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]['nome_escola'], y=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]['ideb'], name='2017'))
+    fig3.add_trace(go.Bar(x=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]['nome_escola'], y=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]['ideb'], name='2019'))
+    fig3.add_trace(go.Bar(x=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2021) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]['nome_escola'], y=df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2021) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]['ideb'], name='2021'))
+
+    fig3.update_layout(title='Valor do IDEB por Escola do Município de Embu-Guaçu no Ensino Médio',
+                    xaxis_title='Escolas',
+                    yaxis_title='IDEB',
+                    barmode='group',
+                    legend_title='Ano',
+                    width=600, 
+                    height=500, 
+                    yaxis_tickangle=-45) 
+   
+    st.plotly_chart(fig3)
+
+    paragrafo4_tab4 = 'O comportamento do Índice de Desenvolvimento da Educação Básica (IDEB) no município de Embu-Guaçu reflete-se de forma semelhante nos dados específicos por escola, revelando uma tendência de declínio nos anos recentes, especialmente entre 2019 e 2021, em decorrência dos impactos da pandemia.'
+
+    texto_justificado_3_tab4 = f"""
+        <p style="text-align: justify;">{paragrafo4_tab4}</p>               
+    """
+
+    st.markdown(texto_justificado_3_tab4, unsafe_allow_html=True)
+
+
+    st.markdown("#### IDEB por Escola nos Anos Iniciais (1º ao 5º ano)")
+
+
+    df_2017 = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AI')]
+
+    df_2017 = df_2017.sort_values(by='ideb', ascending=True)   
+    ideb_2017 = df_ideb_por_municipio[(df_ideb_por_municipio['ciclo'] == 'AI') & (df_ideb_por_municipio['rede'] == 'Pública') & (df_ideb_por_municipio['ano'] == 2017)]['ideb'].mean()
+       
+    colors = ['#1f77b4' if ideb >= ideb_2017 else '#aec7e8' for ideb in df_2017['ideb']]
+    
+    fig4 = go.Figure()
+    
+    fig4.add_trace(go.Bar(x=df_2017['ideb'], y=df_2017['nome_escola'],
+                        name='2017', orientation='h', marker_color=colors))
+    
+    fig4.add_vline(x=ideb_2017, line_dash="dash", line_color="black")
+    
+    fig4.add_annotation(x=ideb_2017 + 0.2, y=15, text=f"IDEB Embu-Guaçu: {ideb_2017}", showarrow=True,
+                    arrowhead=1, arrowcolor="black", arrowsize=0.5,
+                    arrowwidth=2, ax=70, ay=-30)
+    
+    fig4.update_layout(title='Valor do IDEB 2017 por Escola do Município de Embu-Guaçu nos Anos Iniciais (1º ao 5º ano)',
+                    xaxis_title='IDEB 2017',
+                    yaxis_title='Escolas',
+                    legend_title='Ano',
+                    barmode='group',
+                    width=800, 
+                    height=600,
+                    plot_bgcolor='rgba(255,255,255,0)', 
+                    font=dict(family='Arial', size=12, color='black'), 
+                    legend=dict(x=0, y=1.0, bgcolor='rgba(255,255,255,0.5)'), 
+                    margin=dict(l=200, r=50, t=70, b=50), 
+                    )
+    
+    st.plotly_chart(fig4)
+
+    df_2019 = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AI')]
+    df_2019 = df_2019.sort_values(by='ideb', ascending=True)
+    ideb_2019 = df_ideb_por_municipio[(df_ideb_por_municipio['ciclo'] == 'AI') & (df_ideb_por_municipio['rede'] == 'Pública') & (df_ideb_por_municipio['ano'] == 2019)]['ideb'].mean()
+
+    colors = ['#1f77b4' if ideb >= ideb_2019 else '#aec7e8' for ideb in df_2019['ideb']]
+
+    fig5 = go.Figure()
+    
+    fig5.add_trace(go.Bar(x=df_2019['ideb'], y=df_2019['nome_escola'],
+                        name='2019', orientation='h', marker_color=colors))
+    
+    fig5.add_vline(x=ideb_2019, line_dash="dash", line_color="black")
+    
+    fig5.add_annotation(x=ideb_2019 + 0.2, y=16, text=f"IDEB Embu-Guaçu: {ideb_2019}", showarrow=True,
+                    arrowhead=1, arrowcolor="black", arrowsize=0.5,
+                    arrowwidth=2, ax=70, ay=-30)
+    
+    fig5.update_layout(title='Valor do IDEB 2019 por Escola do Município de Embu-Guaçu nos Anos Iniciais (1º ao 5º ano)',
+                    xaxis_title='IDEB 2019',
+                    yaxis_title='Escolas',
+                    legend_title='Ano',
+                    barmode='group',
+                    width=800, 
+                    height=600,
+                    plot_bgcolor='rgba(255,255,255,0)', 
+                    font=dict(family='Arial', size=12, color='black'), 
+                    legend=dict(x=0, y=1.0, bgcolor='rgba(255,255,255,0.5)'), 
+                    margin=dict(l=200, r=50, t=70, b=50), 
+                    )
+    
+    st.plotly_chart(fig5)
+
+
+    df_2021 = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2021) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AI')]
+    df_2021 = df_2021.sort_values(by='ideb', ascending=True)
+    ideb_2021 = df_ideb_por_municipio[(df_ideb_por_municipio['ciclo'] == 'AI') & (df_ideb_por_municipio['rede'] == 'Pública') & (df_ideb_por_municipio['ano'] == 2021)]['ideb'].mean()
+
+    colors = ['#1f77b4' if ideb >= ideb_2021 else '#aec7e8' for ideb in df_2021['ideb']]
+
+    fig6 = go.Figure()
+    
+    fig6.add_trace(go.Bar(x=df_2021['ideb'], y=df_2021['nome_escola'],
+                        name='2021', orientation='h', marker_color=colors))
+    
+    fig6.add_vline(x=ideb_2021, line_dash="dash", line_color="black")
+    
+    fig6.add_annotation(x=ideb_2021 + 0.2, y=15, text=f"IDEB Embu-Guaçu: {ideb_2021}", showarrow=True,
+                    arrowhead=1, arrowcolor="black", arrowsize=0.5,
+                    arrowwidth=2, ax=70, ay=-30)
+    
+    fig6.update_layout(title='Valor do IDEB 2021 por Escola do Município de Embu-Guaçu nos Anos Iniciais (1º ao 5º ano)',
+                    xaxis_title='IDEB 2021',
+                    yaxis_title='Escolas',
+                    legend_title='Ano',
+                    barmode='group',
+                    width=800, 
+                    height=600,
+                    plot_bgcolor='rgba(255,255,255,0)', 
+                    font=dict(family='Arial', size=12, color='black'), 
+                    legend=dict(x=0, y=1.0, bgcolor='rgba(255,255,255,0.5)'), 
+                    margin=dict(l=200, r=50, t=70, b=50), 
+                    )
+    
+    st.plotly_chart(fig6)
+
+
+    st.markdown("#### IDEB por Escola nos Anos Finais (6º ao 9º ano)")
+
+    df_2017_af = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]
+    df_2019_af = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]
+    df_2021_af = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2021) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]
+    
+    df_2017_af = df_2017_af.sort_values(by='ideb', ascending=True)
+    df_2019_af = df_2019_af.sort_values(by='ideb', ascending=True)
+    df_2021_af = df_2021_af.sort_values(by='ideb', ascending=True)
+
+    ideb_2017_af = df_ideb_por_municipio[(df_ideb_por_municipio['ciclo'] == 'AF') & (df_ideb_por_municipio['rede'] == 'Pública') & (df_ideb_por_municipio['ano'] == 2017)]['ideb'].mean()
+    ideb_2019_af = df_ideb_por_municipio[(df_ideb_por_municipio['ciclo'] == 'AF') & (df_ideb_por_municipio['rede'] == 'Pública') & (df_ideb_por_municipio['ano'] == 2019)]['ideb'].mean()
+    ideb_2021_af = df_ideb_por_municipio[(df_ideb_por_municipio['ciclo'] == 'AF') & (df_ideb_por_municipio['rede'] == 'Pública') & (df_ideb_por_municipio['ano'] == 2021)]['ideb'].mean()
+
+
+    colors1 = ['#1f77b4' if ideb >= ideb_2017_af else '#aec7e8' for ideb in df_2017_af['ideb']]
+    colors2 = ['#1f77b4' if ideb >= ideb_2019_af else '#aec7e8' for ideb in df_2019_af['ideb']]
+    colors3 = ['#1f77b4' if ideb >= ideb_2021_af else '#aec7e8' for ideb in df_2021_af['ideb']]
+
+
+    fig7 = go.Figure()
+    
+    fig7.add_trace(go.Bar(x=df_2017_af['ideb'], y=df_2017_af['nome_escola'],
+                        name='2017', orientation='h', marker_color=colors1))
+    
+    fig7.add_vline(x=ideb_2017_af, line_dash="dash", line_color="black")
+    
+    fig7.add_annotation(x=ideb_2017_af + 0.2, y=10, text=f"IDEB Embu-Guaçu: {ideb_2017_af}", showarrow=True,
+                    arrowhead=1, arrowcolor="black", arrowsize=0.5,
+                    arrowwidth=2, ax=70, ay=-30)
+    
+    fig7.update_layout(title='Valor do IDEB 2017 por Escola do Município de Embu-Guaçu nos Anos Finais (6º ao 9º ano)',
+                    xaxis_title='IDEB 2017',
+                    yaxis_title='Escolas',
+                    legend_title='Ano',
+                    barmode='group',
+                    width=800, 
+                    height=600,
+                    plot_bgcolor='rgba(255,255,255,0)', 
+                    font=dict(family='Arial', size=12, color='black'), 
+                    legend=dict(x=0, y=1.0, bgcolor='rgba(255,255,255,0.5)'), 
+                    margin=dict(l=200, r=50, t=70, b=50), 
+                    )
+    
+    st.plotly_chart(fig7)
+
+
+    fig8 = go.Figure()
+    
+    fig8.add_trace(go.Bar(x=df_2019_af['ideb'], y=df_2019_af['nome_escola'],
+                        name='2019', orientation='h', marker_color=colors2))
+    
+    fig8.add_vline(x=ideb_2019_af, line_dash="dash", line_color="black")
+    
+    fig8.add_annotation(x=ideb_2019_af + 0.2, y=12, text=f"IDEB Embu-Guaçu: {ideb_2019_af}", showarrow=True,
+                    arrowhead=1, arrowcolor="black", arrowsize=0.5,
+                    arrowwidth=2, ax=70, ay=-30)
+    
+    fig8.update_layout(title='Valor do IDEB 2019 por Escola do Município de Embu-Guaçu nos Anos Finais (6º ao 9º ano)',
+                    xaxis_title='IDEB 2019',
+                    yaxis_title='Escolas',
+                    legend_title='Ano',
+                    barmode='group',
+                    width=800, 
+                    height=600,
+                    plot_bgcolor='rgba(255,255,255,0)', 
+                    font=dict(family='Arial', size=12, color='black'), 
+                    legend=dict(x=0, y=1.0, bgcolor='rgba(255,255,255,0.5)'), 
+                    margin=dict(l=200, r=50, t=70, b=50), 
+                    )
+    
+    st.plotly_chart(fig8)
+
+
+    fig9 = go.Figure()
+    
+    fig9.add_trace(go.Bar(x=df_2021_af['ideb'], y=df_2021_af['nome_escola'],
+                        name='2021', orientation='h', marker_color=colors3))
+    
+    fig9.add_vline(x=ideb_2021_af, line_dash="dash", line_color="black")
+    
+    fig9.add_annotation(x=ideb_2021_af + 0.2, y=12, text=f"IDEB Embu-Guaçu: {ideb_2021_af}", showarrow=True,
+                    arrowhead=1, arrowcolor="black", arrowsize=0.5,
+                    arrowwidth=2, ax=70, ay=-30)
+    
+    fig9.update_layout(title='Valor do IDEB 2021 por Escola do Município de Embu-Guaçu nos Anos Finais (6º ao 9º ano)',
+                    xaxis_title='IDEB 2021',
+                    yaxis_title='Escolas',
+                    legend_title='Ano',
+                    barmode='group',
+                    width=800, 
+                    height=600,
+                    plot_bgcolor='rgba(255,255,255,0)', 
+                    font=dict(family='Arial', size=12, color='black'), 
+                    legend=dict(x=0, y=1.0, bgcolor='rgba(255,255,255,0.5)'), 
+                    margin=dict(l=200, r=50, t=70, b=50), 
+                    )
+    
+    st.plotly_chart(fig9)
+
+
+
+
+    st.markdown("#### IDEB por Escola no Ensino Médio")
+
+    df_2017_em = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]
+    df_2019_em = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]
+    df_2021_em = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2021) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]
+    
+    df_2017_em = df_2017_em.sort_values(by='ideb', ascending=True)
+    df_2019_em = df_2019_em.sort_values(by='ideb', ascending=True)
+    df_2021_em = df_2021_em.sort_values(by='ideb', ascending=True)
+
+    ideb_2017_em = df_ideb_por_municipio[(df_ideb_por_municipio['ciclo'] == 'EM') & (df_ideb_por_municipio['rede'] == 'Pública') & (df_ideb_por_municipio['ano'] == 2017)]['ideb'].mean()
+    ideb_2019_em = df_ideb_por_municipio[(df_ideb_por_municipio['ciclo'] == 'EM') & (df_ideb_por_municipio['rede'] == 'Pública') & (df_ideb_por_municipio['ano'] == 2019)]['ideb'].mean()
+    ideb_2021_em = df_ideb_por_municipio[(df_ideb_por_municipio['ciclo'] == 'EM') & (df_ideb_por_municipio['rede'] == 'Pública') & (df_ideb_por_municipio['ano'] == 2021)]['ideb'].mean()
+
+    colors1_em = ['#1f77b4' if ideb >= ideb_2017_em else '#aec7e8' for ideb in df_2017_em['ideb']]
+    colors2_em = ['#1f77b4' if ideb >= ideb_2019_em else '#aec7e8' for ideb in df_2019_em['ideb']]
+    colors3_em = ['#1f77b4' if ideb >= ideb_2021_em else '#aec7e8' for ideb in df_2021_em['ideb']]
+    
+
+    fig10 = go.Figure()
+    
+    fig10.add_trace(go.Bar(x=df_2017_em['ideb'], y=df_2017_em['nome_escola'],
+                        name='2017', orientation='h', marker_color=colors1_em))
+    
+    fig10.add_vline(x=ideb_2017_em, line_dash="dash", line_color="black")
+    
+    fig10.add_annotation(x=ideb_2017_em + 0.2, y=6, text=f"IDEB Embu-Guaçu: {ideb_2017_em}", showarrow=True,
+                    arrowhead=1, arrowcolor="black", arrowsize=0.5,
+                    arrowwidth=2, ax=70, ay=-30)
+    
+    fig10.update_layout(title='Valor do IDEB 2017 por Escola do Município de Embu-Guaçu no Ensino Médio',
+                    xaxis_title='IDEB 2017',
+                    yaxis_title='Escolas',
+                    legend_title='Ano',
+                    barmode='group',
+                    width=800, 
+                    height=300,
+                    plot_bgcolor='rgba(255,255,255,0)', 
+                    font=dict(family='Arial', size=12, color='black'), 
+                    legend=dict(x=0, y=1.0, bgcolor='rgba(255,255,255,0.5)'), 
+                    margin=dict(l=200, r=50, t=70, b=50), 
+                    )
+    
+    st.plotly_chart(fig10)
+
+
+    fig11 = go.Figure()
+    
+    fig11.add_trace(go.Bar(x=df_2019_em['ideb'], y=df_2019_em['nome_escola'],
+                        name='2019', orientation='h', marker_color=colors2_em))
+    
+    fig11.add_vline(x=ideb_2019_em, line_dash="dash", line_color="black")
+    
+    fig11.add_annotation(x=ideb_2019_em + 0.2, y=8, text=f"IDEB Embu-Guaçu: {ideb_2019_em}", showarrow=True,
+                    arrowhead=1, arrowcolor="black", arrowsize=0.5,
+                    arrowwidth=2, ax=70, ay=-30)
+    
+    fig11.update_layout(title='Valor do IDEB 2019 por Escola do Município de Embu-Guaçu no Ensino Médio',
+                    xaxis_title='IDEB 2019',
+                    yaxis_title='Escolas',
+                    legend_title='Ano',
+                    barmode='group',
+                    width=800, 
+                    height=400,
+                    plot_bgcolor='rgba(255,255,255,0)', 
+                    font=dict(family='Arial', size=12, color='black'), 
+                    legend=dict(x=0, y=1.0, bgcolor='rgba(255,255,255,0.5)'), 
+                    margin=dict(l=200, r=50, t=70, b=50), 
+                    )
+    
+    st.plotly_chart(fig11)
+
+
+    fig12 = go.Figure()
+    
+    fig12.add_trace(go.Bar(x=df_2021_em['ideb'], y=df_2021_em['nome_escola'],
+                        name='2021', orientation='h', marker_color=colors3_em))
+    
+    fig12.add_vline(x=ideb_2021_em, line_dash="dash", line_color="black")
+    
+    fig12.add_annotation(x=ideb_2021_em + 0.2, y=4, text=f"IDEB Embu-Guaçu: {ideb_2021_em}", showarrow=True,
+                    arrowhead=1, arrowcolor="black", arrowsize=0.5,
+                    arrowwidth=2, ax=70, ay=-30)
+    
+    fig12.update_layout(title='Valor do IDEB 2021 por Escola do Município de Embu-Guaçu nos no Ensino Médio',
+                    xaxis_title='IDEB 2021',
+                    yaxis_title='Escolas',
+                    legend_title='Ano',
+                    barmode='group',
+                    width=800, 
+                    height=300,
+                    plot_bgcolor='rgba(255,255,255,0)', 
+                    font=dict(family='Arial', size=12, color='black'), 
+                    legend=dict(x=0, y=1.0, bgcolor='rgba(255,255,255,0.5)'), 
+                    margin=dict(l=200, r=50, t=70, b=50), 
+                    )
+    
+    st.plotly_chart(fig12)
+
+
+    st.markdown("#### Localização das Escolas do Município de Embu-Guaçu com Desempenho Ruim no IDEB")
+
+    coordenadas_escolas = {
+        'AMANDA CONSUELO DA CUNHA ESCOLA MUNICIPAL': (-23.867716889795453, -46.790130881181234),
+        'ESCOLA MUNICIPAL JOAO ALVES': (-23.882388200836104, -46.84855013597809),
+        'ETELVINA DELFIM SIMOES EM': (-23.83447173963271, -46.81065281618173),
+        'ESCOLA MUNICIPAL MARIA IGNEZ CONCELLES IRMA INES': (-23.80726208790731, -46.83203519864512),
+        'CECILIA CRISTINA DE OLIVEIRA RODRIGUES ESCOLA MUNICIPAL': (-23.870709390590278, -46.78891146803589),
+        'LORIS NASSIF MATTAR PROFA': (-23.847907585873706, -46.87684725341914),
+        'ALFREDO SCHUNK ESCOLA MUNICIPAL': (-23.874592459464882, -46.7780885762005),
+        'LEVI PEREIRA MARTINS PROFESSOR': (-23.922059766915865, -46.86920741439455),
+        'DONIZETTI APARECIDO LEITE PROFESSOR': (-23.88200854220514, -46.79276327820527)        
+    }
+
+    df = pd.DataFrame(list(coordenadas_escolas.items()), columns=['Escola', 'Coordenadas'])
+
+    
+    fig = px.scatter_mapbox(df, lat=[coord[0] for coord in df['Coordenadas']], 
+                            lon=[coord[1] for coord in df['Coordenadas']], 
+                            hover_name='Escola', zoom=12)
+
+    fig.update_layout(mapbox_style="open-street-map")
+    fig.update_traces(marker=dict(size=15))
+    
+    st.plotly_chart(fig)
