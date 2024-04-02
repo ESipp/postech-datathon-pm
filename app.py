@@ -24,7 +24,7 @@ with tab0:
 
     paragrafo1_tab0 = 'Em um mundo marcado por desigualdades sociais, as organizações não governamentais (ONGs) desempenham um papel fundamental na construção de comunidades mais justas e inclusivas. Entre essas instituições, a <a href="https://passosmagicos.org.br/" target="_blank"><b>Passos Mágicos</b></a> se destaca como um farol de esperança. Fundada em 1992 por Michelle Flues e Dimetri Ivanoff, a ONG evoluiu significativamente ao longo dos anos, expandindo sua atuação e aprimorando sua abordagem para oferecer não apenas educação, mas também suporte psicológico, desenvolvimento pessoal e comunitário a crianças e jovens de baixa renda do município de Embu-Guaçu.'
     paragrafo2_tab0 = 'Ao analisar os dados históricos e atuais da organização, buscamos entender não apenas as tendências educacionais, mas também os fatores emocionais e sociais que moldam o progresso dos beneficiados pela ONG. A identificação de elementos-chave de sucesso permitirá não apenas reconhecer, mas também amplificar os aspectos mais eficazes do trabalho da <a href="https://passosmagicos.org.br/" target="_blank"><b>Passos Mágicos</b></a> e, desse modo, fortalecer o impacto positivo que a ONG traz para as vidas de tantos jovens e crianças, ao oferecer-lhes não apenas educação, mas também a esperança de um futuro melhor.'
-    paragrafo3_tab0 = 'A base de dados utilizada na execução deste trabalho foi fornecida pela equipe da <a href="https://passosmagicos.org.br/" target="_blank"><b>Passos Mágicos</b></a> e contém registros detalhados do acompanhamento de cada aluno. Esta base abrange uma variedade de informações, incluindo indicadores de desempenho e observações relevantes, durante todo o período em que os alunos estiveram vinculados à ONG.'
+    paragrafo3_tab0 = 'A base de dados utilizada na execução deste trabalho foi fornecida pela equipe da <a href="https://passosmagicos.org.br/" target="_blank"><b>Passos Mágicos</b></a> e contém registros detalhados do acompanhamento de cada aluno durante todo o período de vínculo com a ONG. Esta base abrange uma variedade de informações, incluindo indicadores de avaliação, indicadores de conselho e observações relevantes. Além disso, também se fez uso da base de dados do <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb" target="_blank"><b>Índice de Desenvolvimento da Educação Básica (IDEB)</b></a>, fornecida pelo <a href="https://www.gov.br/inep/pt-br" target="_blank"><b>Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP)</b></a>. Essa escolha se revelou fundamental para uma análise mais abrangente e embasada. O IDEB, como indicador oficial que avalia a qualidade da educação no Brasil, ofereceu insights valiosos sobre o desempenho das escolas no município de Embu-Guaçu ao longo dos anos. Ao combinar esses dados, pudemos aprofundar nossa compreensão dos desafios educacionais enfrentados pela região, identificar tendências ao longo do tempo e destacar áreas específicas que demandam atenção prioritária.'
 
     texto_justificado_tab0 = f"""
         <p style="text-align: justify;">{paragrafo1_tab0}</p>
@@ -67,8 +67,8 @@ with tab1:
     # Exibindo o primeiro gráfico
     st.plotly_chart(fig1)
 
-    paragrafo2_tab1 = 'É evidente o crescimento do número de alunos ao longo do tempo, o que iniciou-se com 70 alunos em 2016 já atingia 1.100 alunos ainda no ano de 2023. Destaca-se o aumento de cerca de 329% ocorrido entre 2016 e 2017.'
-    paragrafo3_tab1 = 'Além disso, com o desenvolvimento da ONG é visto que também surgiram bolsistas e universitários. Outro destaque é a variação do número de universitários entre 2019 (2) para 2020 (26) gerando um aumento de 1.200%'
+    paragrafo2_tab1 = 'Ao longo do tempo, observamos um crescimento notável no número de alunos envolvidos com a ONG: começando com 70 alunos em 2016 e escalando para 1.100 alunos até o ano de 2023. Destaca-se especialmente o impressionante aumento de aproximadamente 329% ocorrido entre 2016 e 2017, refletindo um crescimento substancial e uma maior adesão ao programa ao longo dos anos.'
+    paragrafo3_tab1 = 'Além disso, também é evidente o aumento significativo no número de bolsistas e universitários participantes. Um ponto de destaque notável é a variação do número de universitários, que passou de 2 em 2019 para 26 em 2020, representando um aumento extraordinário de 1.200%.'
 
     texto_justificado_1_tab1 = f"""
         <p style="text-align: justify;">{paragrafo2_tab1}</p>     
@@ -97,8 +97,8 @@ with tab1:
     # Exibindo o segundo gráfico
     st.plotly_chart(fig2)
     
-    paragrafo4_tab1 = 'Obviamente, esse crescimento só foi possível devido ao crescimento dos profissionais trabalhando na <b>Passos Mágicos</b>. É interessante analisar como o crescimento dos professores ocorreu praticamente de forma linear, mostrando avanço em todos os anos com exceção do ano de 2020 fortemente atingido pela Pandemia de COVID-19.'
-    paragrafo5_tab1 = 'Acrescentado a isso, o crescimento da ONG também oportunizou a entrada de novos profissionais chegando a um total de 22 no ano de 2023.'
+    paragrafo4_tab1 = 'Obviamente, o progresso observado no número de alunos se deu pelo crescimento dos colaboradores envolvidos com a <b>Passos Mágicos</b>. É interessante observar que o aumento no número de professores ocorreu de maneira consistente ao longo dos anos, seguindo uma tendência linear de crescimento, com avanços notáveis em todos os anos, exceto em 2020, quando a Pandemia de COVID-19 teve um impacto significativo.'
+    paragrafo5_tab1 = 'Além disso, o crescimento da ONG abriu portas para a entrada de novos profissionais, elevando o total para 22 no ano de 2023. Essa expansão na equipe reflete não apenas o amadurecimento da organização, mas também sua capacidade de atrair talentos e se adaptar às demandas crescentes de suas operações e programas.'
 
     texto_justificado_2_tab1 = f"""
         <p style="text-align: justify;">{paragrafo4_tab1}</p>
@@ -131,7 +131,7 @@ with tab1:
     # Exibindo o gráfico
     st.plotly_chart(fig)
     
-    paragrafo6_tab1 = 'Podemos analisar essa relação traçando as linhas de Total de Alunos e Total de Profissionais ao longo dos anos - por questões de escala, foi utilizado um eixo secundário para o número de profissionais. Ao criar essa análise podemos ver que ambas séries acompanham uma tendência de crescimento similar o que só fomenta o entendimento de que o crescimento do número de alunos auxiliados pela ONG é diretamente ligado pela estrutura que a mesma consegue proporcionar. Esse fato reitera a importância de investimentos e "padrinhos" para manter e reforçar essa tendência.'
+    paragrafo6_tab1 = 'Podemos explorar essa dinâmica traçando as curvas que representam o Total de Alunos e o Total de Profissionais ao longo dos anos. Por uma questão de escala, optamos por utilizar um eixo secundário para representar o número de profissionais. Ao conduzir essa análise, observamos que ambas as séries temporais seguem uma tendência de crescimento semelhante. Isso fortalece a compreensão de que o aumento no número de alunos assistidos pela ONG está diretamente associado à estrutura que ela consegue proporcionar. Essa constatação reforça a importância de investimentos e apoios contínuos para manter e fortalecer essa tendência positiva.'
 
     texto_justificado_3_tab1 = f"""
         <p style="text-align: justify;">{paragrafo6_tab1}</p>
@@ -153,7 +153,7 @@ with tab1:
     # Exibindo o heatmap
     st.pyplot(plt)
 
-    paragrafo7_tab1 = 'De uma maneira mais técnica, podemos analisar a matriz de correlação destes dados. Obviamente, muitos números estão correlacionados então o foco é analisar a relação do total de alunos com total de profissionais onde temos uma correlação positiva de 0.9. Embora não se possa afirmar, é fortemente identificada essa relação como uma causalidade onde o crescimento da <b>Passos Mágicos</b> possibilita a mesma a ajudar mais e mais crianças e adolescentes.'
+    paragrafo7_tab1 = 'De forma mais técnica, podemos examinar a matriz de correlação desses dados. É evidente que muitos números estão correlacionados, por isso, concentramos nossa análise na relação entre o total de alunos e o total de profissionais, onde observamos uma correlação positiva de 0.9. Embora não possamos afirmar com certeza, essa correlação sugere fortemente uma relação de causalidade, indicando mais uma vez que o crescimento no número de profissionais da <b>Passos Mágicos</b> possibilita à organização auxiliar um número cada vez maior de crianças e adolescentes.'
 
     texto_justificado_4_tab1 = f"""
         <p style="text-align: justify;">{paragrafo7_tab1}</p>
@@ -230,7 +230,7 @@ with tab2:
     # Exibindo o gráfico
     st.plotly_chart(fig)
 
-    paragrafo2_tab2 = 'Devido ao tamanho pequeno do dataset, técnicas que requerem mais dados como Naive, Random Forest e Suavização Exponencial Simples acabaram não conseguindo performar como o esperado. A Média Móvel Simples também não encaixou-se para o caso de uso em questão, ficando visível que a Regressão Linear Simples obteve os melhores resulstados e dá uma boa visão de curto prazo.'
+    paragrafo2_tab2 = 'Devido à limitada quantidade de dados disponíveis no conjunto de dados, técnicas que dependem de um volume maior de dados, como Naive Bayes, Random Forest e Suavização Exponencial Simples, não conseguiram atingir o desempenho esperado. A aplicação da Média Móvel Simples também não se mostrou adequada para o caso em questão. Ficou evidente que a utilização da Regressão Linear Simples produziu os melhores resultados, oferecendo uma visão precisa para análises de curto prazo.'
 
     texto_justificado_1_tab2 = f"""
         <p style="text-align: justify;">{paragrafo2_tab2}</p>
@@ -259,8 +259,8 @@ with tab2:
     
     st.markdown("### Cenários de Crescimento (What-if)")
     
-    paragrafo3_tab2 = 'Com o intuito de servir como ferramenta para a <b>Passos Mágicos</b> foi desenvolvido uma pequena aplicação onde pode-se simular cenários de crescimento baseado em um fator de aumento. Esse fator pode ser escolhido abaixo, assim como o número de anos futuros para ser previsto. O funcionamento é simples, esse valor é multiplicado frente aos dados atuais como uma pequena simulação de crescimento para a ONG, entendendo quais são as suas prospecções - a performance será melhor ao focar em análies de curto prazo. Ao utilizar essa ferramenta, os gestores da <b>Passos Mágicos</b> podem criar cenários e entender a quais patamares esses novos investimentos podem levar a ONG:'
-
+    paragrafo3_tab2 = 'Com o propósito de fornecer uma ferramenta eficaz à <b>Passos Mágicos</b>, foi desenvolvida uma aplicação que permite a simulação de diversos cenários de crescimento com base em um fator de aumento predefinido. Esta aplicação oferece a capacidade de selecionar o referido fator de aumento, assim como o número de anos futuros a serem previstos. Seu funcionamento é intuitivo: o valor escolhido é aplicado como um multiplicador aos dados atuais, proporcionando uma simulação simplificada do potencial crescimento da ONG. Tal ferramenta permite aos gestores da <b>Passos Mágicos</b> criar e explorar diferentes cenários, compreendendo os possíveis impactos de novos investimentos na organização em curto prazo. Ao adotar esta abordagem analítica, os gestores poderão tomar decisões mais informadas e estratégicas para o desenvolvimento da ONG.'
+   
     texto_justificado_2_tab2 = f"""
         <p style="text-align: justify;">{paragrafo3_tab2}</p>
     """
@@ -310,7 +310,7 @@ with tab3:
 
     st.markdown("## Ponto de Virada")
 
-    paragrafo1_tab3 = 'O <b>Ponto de Virada</b> representa um estágio crucial no desenvolvimento do aluno, no qual ele manifesta ativamente várias dimensões de sua jornada dentro da Associação. Nesse momento, é essencial que o aluno esteja consciente da importância da educação ao reconhecer o valor do conhecimento adquirido e a relevância do aprendizado como processo de construção de novos conhecimentos. Passar pelo Ponto de Virada deve significar que o aluno está pronto para protagonizar a transformação de sua vida por meio da educação onde outrora era coadjuvante.'
+    paragrafo1_tab3 = 'O <b>Ponto de Virada</b> representa um estágio crucial no desenvolvimento do aluno, no qual ele manifesta ativamente várias dimensões de sua jornada dentro da Associação. Nesse momento, é essencial que o aluno esteja consciente da importância da educação ao reconhecer o valor do conhecimento adquirido e a relevância do aprendizado como processo de construção de novos conhecimentos. Passar pelo <b>Ponto de Virada</b> deve significar que o aluno está pronto para protagonizar a transformação de sua vida por meio da educação onde outrora era coadjuvante.'
     paragrafo2_tab3 = 'Nessa perspectiva, vamos analisar alguns fatores possivelmente envolvidos com o <b>Ponto de Virada</b>.'
 
     texto_justificado_tab3 = f"""
@@ -359,7 +359,7 @@ with tab3:
     fig.update_layout(legend_title="Ponto de Virada")     
     st.plotly_chart(fig)
 
-    paragrafo3_tab0 = 'Podemos observar que o Ponto de Virada é alcançado por apenas uma minoria dos alunos, representando um percentual relativamente baixo, situado na faixa dos 15% nos anos de 2020 e 2022. O ano de 2021 apresenta um percentual de cerca de 18%, mas com uma quantidade menor de alunos em momento de Ponto de Virada. Ao passo que em 2022, apesar de voltar ao percentual médio, a quantidade de alunos nesse momento aumenta significativamente, o que pode indicar resiliência em manter os resultados alcançados, considerando o período após a pandemia e o aumento conjunto no quadro de profissionais atuantes na ONG. O indicativo de que a maioria dos alunos não experimenta esse ponto de transformação ou mudança significativa em seu processo educacional durante esses períodos analisados levanta questões sobre os fatores subjacentes que influenciam essa pequena porcentagem de alunos e o que pode ser feito para aumentar o alcance desse ponto crítico de desenvolvimento educacional. Afinal, o envolvimento de outros profissionais, mais relacionados ao acompanhamento psíquico, emocional e social para além da vertente pedagógica ainda é recente e a proporção de professores e alunos se manteve crescente.'
+    paragrafo3_tab0 = 'Podemos observar que o <b>Ponto de Virada</b> é alcançado por apenas uma minoria dos alunos, representando um percentual relativamente baixo, situado na faixa dos 15% nos anos de 2020 e 2022. O ano de 2021 apresenta um percentual de cerca de 18%, mas com uma quantidade menor de alunos em momento de <b>Ponto de Virada</b>. Ao passo que em 2022, apesar de voltar ao percentual médio, a quantidade de alunos nesse momento aumenta significativamente, o que pode indicar resiliência em manter os resultados alcançados, considerando o período após a pandemia e o aumento conjunto no quadro de profissionais atuantes na ONG. O indicativo de que a maioria dos alunos não experimenta esse ponto de transformação ou mudança significativa em seu processo educacional durante esses períodos analisados levanta questões sobre os fatores subjacentes que influenciam essa pequena porcentagem de alunos e o que pode ser feito para aumentar o alcance desse ponto crítico de desenvolvimento educacional. Afinal, o envolvimento de outros profissionais, mais relacionados ao acompanhamento psíquico, emocional e social para além da vertente pedagógica ainda é recente e a proporção de professores e alunos se manteve crescente.'
 
     texto_justificado_2_tab3 = f"""
         <p style="text-align: justify;">{paragrafo3_tab0}</p>       
@@ -403,7 +403,7 @@ with tab3:
     plt.grid(True)    
     st.pyplot(fig)
 
-    paragrafo4_tab0 = 'Ao analisarmos a relação entre o número de profissionais na ONG e o número de alunos que alcançaram o Ponto de Virada, podemos observar um crescimento gradual, embora modesto. Inicialmente, a proporção era de 12,77%, aumentando para 14,81% e posteriormente para 18,58%. Essa tendência sugere uma possível correlação entre o aumento do suporte oferecido pelos profissionais da ONG e o crescimento do número de alunos capazes de atingir esse marco educacional crucial. Reforçando a resiliência em manter proporcionalmente os resultados com o aumento da quantidade de alunos e indicando que o envolvimento de profissionais voltados ao bem estar psíquico, emocional e social podem trazer resultados maiores no médio-prazo.'
+    paragrafo4_tab0 = 'Ao analisarmos a relação entre o número de profissionais na ONG e o número de alunos que alcançaram o <b>Ponto de Virada</b>, podemos observar um crescimento gradual, embora modesto. Inicialmente, a proporção era de 12,77%, aumentando para 14,81% e posteriormente para 18,58%. Essa tendência sugere uma possível correlação entre o aumento do suporte oferecido pelos profissionais da ONG e o crescimento do número de alunos capazes de atingir esse marco educacional crucial. Reforçando a resiliência em manter proporcionalmente os resultados com o aumento da quantidade de alunos e indicando que o envolvimento de profissionais voltados ao bem estar psíquico, emocional e social podem trazer resultados maiores no médio-prazo.'
     
     texto_justificado_3_tab3 = f"""
         <p style="text-align: justify;">{paragrafo4_tab0}</p>       
@@ -417,10 +417,10 @@ with tab3:
     media_por_ano_com_pv['ANO'] = media_por_ano_com_pv['ANO'].astype(str)    
     st.write(media_por_ano_com_pv)
 
-    paragrafo5_tab0 = 'Apesar de os dados das notas de Matemática, Português e Inglês estarem disponíveis apenas para o ano de 2022, é evidente que uma discrepância significativa na média das notas é observada entre os alunos que atingiram o Ponto de Virada e aqueles que não o alcançaram. Isso sugere que a percepção desse ponto crítico ocorreu em um período em que os alunos estavam mais dedicados às aulas e avaliações. Esta observação implica não apenas na importância da dedicação dos alunos, mas também levanta questões sobre o papel do currículo, dos métodos de ensino e do ambiente educacional no processo de alcance desse ponto de virada.'
+    paragrafo5_tab0 = 'Apesar de os dados das notas de Matemática, Português e Inglês estarem disponíveis apenas para o ano de 2022, é evidente que uma discrepância significativa na média das notas é observada entre os alunos que atingiram o <b>Ponto de Virada</b> e aqueles que não o alcançaram. Isso sugere que a percepção desse ponto crítico ocorreu em um período em que os alunos estavam mais dedicados às aulas e avaliações. Esta observação implica não apenas na importância da dedicação dos alunos, mas também levanta questões sobre o papel do currículo, dos métodos de ensino e do ambiente educacional no processo de alcance desse <b>Ponto de Virada</b>.'
 
     texto_justificado_4_tab3 = f"""
-        <p style="text-align: justify;">{paragrafo5_tab0}</p>       
+        <p style="text-align: justify;">{paragrafo5_tab0}</p>
     """
 
     st.markdown(texto_justificado_4_tab3, unsafe_allow_html=True)
@@ -432,7 +432,7 @@ with tab3:
     medias['ANO'] = medias['ANO'].astype(int).astype(str)
     st.write(medias)
 
-    paragrafo6_tab0 = 'Da mesma forma que foi observado com as notas, uma tendência semelhante se manifestou nos diversos indicadores avaliados. Incluindo autoavaliação, engajamento, aspectos psicossociais, aprendizado e avaliação psicopedagógica. Essa consistência sugere que há uma inter-relação complexa entre esses diferentes aspectos do desenvolvimento do aluno. Essa análise mais profunda aponta para a necessidade de uma abordagem holística na compreensão do progresso educacional, levando em consideração não apenas o desempenho acadêmico, mas também fatores socioemocionais e psicopedagógicos que impactam o processo de aprendizagem e crescimento pessoal do aluno, possibilitando uma maior clareza de propósito na jornada da educação e aumentando o potencial do Ponto de Virada.'
+    paragrafo6_tab0 = 'Da mesma forma que foi observado com as notas, uma tendência semelhante se manifestou nos diversos indicadores avaliados. Incluindo autoavaliação, engajamento, aspectos psicossociais, aprendizado e avaliação psicopedagógica. Essa consistência sugere que há uma inter-relação complexa entre esses diferentes aspectos do desenvolvimento do aluno. Essa análise mais profunda aponta para a necessidade de uma abordagem holística na compreensão do progresso educacional, levando em consideração não apenas o desempenho acadêmico, mas também fatores socioemocionais e psicopedagógicos que impactam o processo de aprendizagem e crescimento pessoal do aluno, possibilitando uma maior clareza de propósito na jornada da educação e aumentando o potencial do <b>Ponto de Virada</b>.'
 
     texto_justificado_5_tab3 = f"""
         <p style="text-align: justify;">{paragrafo6_tab0}</p>       
@@ -486,7 +486,7 @@ with tab4:
 
     st.plotly_chart(fig0)
 
-    paragrafo3_tab4 = 'Através da análise do gráfico, percebe-se um crescimento no IDEB entre os anos de 2017 e 2019, especialmente nos anos finais do ensino (do 6º ao 9º ano) e no ensino médio. Entretanto, ocorreu uma reversão nesse cenário nos anos subsequentes, com uma queda significativa nos valores do IDEB entre 2019 e 2021, particularmente nos anos iniciais do ensino (do 1º ao 5º ano). Esta diminuição acentuada pode ser atribuída, em grande parte, aos desafios enfrentados durante a pandemia de COVID-19. O impacto da interrupção das aulas presenciais, adaptações no ensino remoto e as disparidades no acesso às tecnologias educacionais podem ter contribuído para esse declínio no desempenho educacional, evidenciando a necessidade de estratégias específicas de recuperação e apoio pedagógico para mitigar esses efeitos adversos.'
+    paragrafo3_tab4 = 'Através da análise do gráfico, percebe-se um crescimento no IDEB entre os anos de 2017 e 2019 nos anos finais do ensino (do 6º ao 9º ano) e no ensino médio. Entretanto, ocorreu uma reversão nesse cenário nos anos subsequentes, com uma queda significativa nos valores do IDEB entre 2019 e 2021, principalmente nos anos iniciais do ensino (do 1º ao 5º ano). Esta diminuição acentuada pode ser atribuída, em grande parte, aos desafios enfrentados durante a pandemia de COVID-19. O impacto da interrupção das aulas presenciais, adaptações no ensino remoto e as disparidades no acesso às tecnologias educacionais podem ter contribuído para esse declínio no desempenho educacional, evidenciando a necessidade de estratégias específicas de recuperação e apoio pedagógico para mitigar esses efeitos adversos.'
 
     texto_justificado_2_tab4 = f"""
         <p style="text-align: justify;">{paragrafo3_tab4}</p>               
@@ -561,7 +561,7 @@ with tab4:
     st.markdown(texto_justificado_3_tab4, unsafe_allow_html=True)
 
 
-    st.markdown("#### IDEB por Escola nos Anos Iniciais (1º ao 5º ano)")
+    st.markdown("#### IDEB por Escola e por Ano nos Anos Iniciais (1º ao 5º ano)")
 
 
     df_2017 = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AI')]
@@ -662,8 +662,22 @@ with tab4:
     
     st.plotly_chart(fig6)
 
+    paragrafo5_tab4 = 'Para avaliar o desempenho das escolas em relação ao Índice de Desenvolvimento da Educação Básica (IDEB) do município de Embu Guaçu, foram estabelecidos critérios específicos. As escolas consideradas com melhor desempenho foram aquelas que obtiveram notas superiores ao IDEB municipal nos anos de 2017, 2019 e 2021. Por outro lado, para identificar as escolas com desempenho inferior, foram consideradas aquelas que apresentaram notas abaixo do IDEB municipal nos três anos consecutivos.'
+    paragrafo6_tab4 = 'Entre as escolas com melhor desempenho no IDEB nos Anos Iniciais (1º ao 5º ano), destacam-se: Hélio Luiz Dobrochinski Prof, Chácara Florida II e Pedro Villas Boas de Souza Dom.'
+    paragrafo7_tab4 = 'Já entre as escolas com pior desempenho no IDEB nos Anos Iniciais (1º ao 5º ano), figuram: Alfredo Schunk Escola Municipal, Escola Municipal Pedro Antonio de Almeida, Levi Pereira Martins Professor, Escola Municipal Maria Ignez Concelles Irma Ines, Amanda Consuelo da Cunha Escola Municipal, Cecília Cristina de Oliveira Rodrigues Escola Municipal e Escola Municipal João Alves.'
+    paragrafo8_tab4 = 'Vale ressaltar o progresso da Escola Municipal Bairro Lagoa Grande, cujo desempenho no IDEB nos Anos Iniciais (1º ao 5º ano) tem demonstrado um crescimento constante ao longo dos anos.'
+    
+    texto_justificado_4_tab4 = f"""
+        <p style="text-align: justify;">{paragrafo5_tab4}</p>               
+        <p style="text-align: justify;">{paragrafo6_tab4}</p>               
+        <p style="text-align: justify;">{paragrafo7_tab4}</p>               
+        <p style="text-align: justify;">{paragrafo8_tab4}</p>               
+    """
 
-    st.markdown("#### IDEB por Escola nos Anos Finais (6º ao 9º ano)")
+    st.markdown(texto_justificado_4_tab4, unsafe_allow_html=True)
+
+
+    st.markdown("#### IDEB por Escola e por Ano nos Anos Finais (6º ao 9º ano)")
 
     df_2017_af = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]
     df_2019_af = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'AF')]
@@ -763,10 +777,20 @@ with tab4:
     
     st.plotly_chart(fig9)
 
+    paragrafo9_tab4 = 'Os critérios de avaliação adotados foram os mesmos delineados anteriormente.'
+    paragrafo10_tab4 = 'Entre as escolas que se destacaram pelo melhor desempenho no IDEB nos Anos Finais (6º ao 9º ano) estão: Alexandre Rodrigues Nogueira e Paschoal Carlos Magno. Por outro lado, aquelas que registraram um desempenho inferior no IDEB nos Anos Finais (6º ao 9º ano) foram: Olivia de Faria Nogueira e Loris Nassif Mattar Profa.'
+    paragrafo12_tab4 = 'É importante ressaltar o notável desempenho da Escola Joaquim Mendes Feliz, cujo índice no IDEB tem demonstrado uma tendência de crescimento ao longo dos anos. '
+    
+    texto_justificado_5_tab4 = f"""
+        <p style="text-align: justify;">{paragrafo9_tab4}</p>               
+        <p style="text-align: justify;">{paragrafo10_tab4}</p>           
+        <p style="text-align: justify;">{paragrafo12_tab4}</p>               
+    """
+
+    st.markdown(texto_justificado_5_tab4, unsafe_allow_html=True)
 
 
-
-    st.markdown("#### IDEB por Escola no Ensino Médio")
+    st.markdown("#### IDEB por Escola e por Ano no Ensino Médio")
 
     df_2017_em = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2017) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]
     df_2019_em = df_ideb_por_escola_embu_guacu[(df_ideb_por_escola_embu_guacu['ano'] == 2019) & (df_ideb_por_escola_embu_guacu['ciclo'] == 'EM')]
@@ -865,19 +889,38 @@ with tab4:
     
     st.plotly_chart(fig12)
 
+    paragrafo13_tab4 = 'Os critérios de avaliação adotados foram os mesmos delineados anteriormente.'
+    paragrafo14_tab4 = 'Entre as escolas que se destacaram pelo melhor desempenho no IDEB no Ensino Médio estão: Leonice de Aquino Oliveira e Maria Andre Schunck Dona. Por outro lado, a escola que registrou um desempenho inferior no IDEB no Ensino Médio foi: Donizetti Aparecido Leite Professor.'
+    
+    texto_justificado_6_tab4 = f"""
+        <p style="text-align: justify;">{paragrafo13_tab4}</p>               
+        <p style="text-align: justify;">{paragrafo14_tab4}</p>       
+    """
 
-    st.markdown("#### Localização das Escolas do Município de Embu-Guaçu com Desempenho Ruim no IDEB")
+    st.markdown(texto_justificado_6_tab4, unsafe_allow_html=True)
+
+
+    st.markdown("#### Localização das Escolas do Município de Embu-Guaçu com Piores Desempenhos no IDEB")
+
+    paragrafo15_tab4 = 'Mapear geoespacialmente a localização das escolas com os menores IDEBs no município de Embu Guaçu é fundamental, pois essa análise permite que a ONG <b>Passos Mágicos</b> direcione eficazmente os recursos para áreas carentes de apoio educacional, assegurando um impacto substancial na qualidade da educação. Ao concentrar esforços nessas regiões com baixo desempenho escolar, é possível mitigar disparidades educacionais e promover equidade no acesso à educação. Além disso, essa abordagem facilita a criação de programas e intervenções personalizadas, adaptadas às demandas locais e às peculiaridades de cada comunidade.'
+
+    texto_justificado_7_tab4 = f"""
+        <p style="text-align: justify;">{paragrafo15_tab4}</p>
+    """
+
+    st.markdown(texto_justificado_7_tab4, unsafe_allow_html=True)
 
     coordenadas_escolas = {
         'AMANDA CONSUELO DA CUNHA ESCOLA MUNICIPAL': (-23.867716889795453, -46.790130881181234),
         'ESCOLA MUNICIPAL JOAO ALVES': (-23.882388200836104, -46.84855013597809),
-        'ETELVINA DELFIM SIMOES EM': (-23.83447173963271, -46.81065281618173),
         'ESCOLA MUNICIPAL MARIA IGNEZ CONCELLES IRMA INES': (-23.80726208790731, -46.83203519864512),
         'CECILIA CRISTINA DE OLIVEIRA RODRIGUES ESCOLA MUNICIPAL': (-23.870709390590278, -46.78891146803589),
         'LORIS NASSIF MATTAR PROFA': (-23.847907585873706, -46.87684725341914),
         'ALFREDO SCHUNK ESCOLA MUNICIPAL': (-23.874592459464882, -46.7780885762005),
         'LEVI PEREIRA MARTINS PROFESSOR': (-23.922059766915865, -46.86920741439455),
-        'DONIZETTI APARECIDO LEITE PROFESSOR': (-23.88200854220514, -46.79276327820527)        
+        'DONIZETTI APARECIDO LEITE PROFESSOR': (-23.88200854220514, -46.79276327820527),
+        'OLIVIA DE FARIA NOGUEIRA': (-23.79704780323135, -46.81595838614066),
+        'ESCOLA MUNICIPAL PEDRO ANTONIO DE ALMEIDA': (-23.835174009714695, -46.85846506926611)        
     }
 
     df = pd.DataFrame(list(coordenadas_escolas.items()), columns=['Escola', 'Coordenadas'])
@@ -885,9 +928,18 @@ with tab4:
     
     fig = px.scatter_mapbox(df, lat=[coord[0] for coord in df['Coordenadas']], 
                             lon=[coord[1] for coord in df['Coordenadas']], 
-                            hover_name='Escola', zoom=12)
+                            hover_name='Escola', zoom=11)
 
-    fig.update_layout(mapbox_style="open-street-map")
+    fig.update_layout(mapbox_style="open-street-map", width=700, height=600)
     fig.update_traces(marker=dict(size=15))
     
     st.plotly_chart(fig)
+
+
+    paragrafo16_tab4 = 'Ao analisar o mapa, pode-se observar que as escolas com os menores IDEBs no município de Embu Guaçu estão predominantemente localizadas em regiões afastadas do centro urbano. Especificamente, há uma concentração significativa dessas escolas no distrito de Cipó-Guaçu. Essa distribuição geográfica levanta questões importantes sobre os possíveis motivos por trás do baixo desempenho educacional nessas áreas. Fatores como infraestrutura precária, acesso limitado a recursos educacionais, desigualdades socioeconômicas e falta de investimento em educação contribuem para essa realidade.'
+
+    texto_justificado_8_tab4 = f"""
+        <p style="text-align: justify;">{paragrafo16_tab4}</p>
+    """
+
+    st.markdown(texto_justificado_8_tab4, unsafe_allow_html=True)
