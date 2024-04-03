@@ -16,7 +16,7 @@ st.set_page_config(
 st.title('Passos Mágicos - Analytics')
 
 
-tab0, tab1, tab2, tab3, tab4 = st.tabs(["Introdução", "Visão Geral dos Dados", "Forecast e What-if", "Ponto de Virada", "IDEB"])
+tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs(["Introdução", "Visão Geral dos Dados", "Forecast e What-if", "Ponto de Virada", "IDEB", "Conclusão"])
 
 with tab0:      
 
@@ -943,3 +943,22 @@ with tab4:
     """
 
     st.markdown(texto_justificado_8_tab4, unsafe_allow_html=True)
+
+
+with tab5:      
+
+    st.markdown("## Conclusão")
+
+    paragrafo17_tab4 = 'Através da elaboração deste trabalho, evidenciou-se que a busca mais patrocínio, investidores e voluntários é fundamental para fortalecer e expandir as operações da ONG <b>Passos Mágicos</b>. Ao aumentar os recursos disponíveis, a organização estará melhor equipada para atender a um número crescente de alunos, proporcionando-lhes a educação e o apoio necessários para um futuro promissor. Estratégias como campanhas de divulgação, networking e programas de voluntariado bem estruturados são essenciais para alcançar esse objetivo.'
+    paragrafo18_tab4 = 'Para mitigar os efeitos adversos da pandemia na educação, é vital que a <b>Passos Mágicos</b> continue adotando estratégias como apoio pedagógico individualizado, recuperação de aprendizagem, formação contínua para professores, acesso equitativo a tecnologias educacionais e programas de apoio emocional. É fundamental também estabelecer parcerias com a comunidade e envolver os pais na educação de seus filhos.'
+    paragrafo19_tab4 = 'É imprescindível também priorizar vagas e recursos para alunos em áreas com maiores necessidades educacionais, como Cipó-Guaçu e outras regiões distantes do centro urbano. Concentrando esforços nessas comunidades, a ONG pode contribuir significativamente para melhorar os índices de desenvolvimento da educação básica e promover o desenvolvimento social e econômico da região.'
+    paragrafo20_tab4 = 'Em resumo, ao adotar essas medidas e estratégias, a <b>Passos Mágicos</b> não só ampliará seu impacto e alcance, mas também construirá um futuro mais promissor para os jovens de Embu-Guaçu.'
+
+    texto_justificado_9_tab4 = f"""
+        <p style="text-align: justify;">{paragrafo17_tab4}</p>
+        <p style="text-align: justify;">{paragrafo18_tab4}</p>
+        <p style="text-align: justify;">{paragrafo19_tab4}</p>
+        <p style="text-align: justify;">{paragrafo20_tab4}</p>
+    """
+
+    st.markdown(texto_justificado_9_tab4, unsafe_allow_html=True)
